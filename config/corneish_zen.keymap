@@ -19,7 +19,7 @@
 // Configure mod-tap
 &mt {
   flavor = "tap-preferred";
-  tapping-term-ms = <225>;
+  tapping-term-ms = <150>;
 };
 
 / {
