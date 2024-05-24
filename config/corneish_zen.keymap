@@ -10,6 +10,9 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 
+// Urob's helpers. Needed for ZMK_LAYER().
+#include "zmk-helpers/helper.h"
+
 / {
     chosen {
         zmk,matrix-transform = &default_transform;
@@ -171,9 +174,7 @@
 // https://github.com/manna-harbour/miryoku_zmk#mouse-keys
 // https://github.com/doththouevenhoist/zmk-config-Corne-ish-Zen/blob/4cafe5ca22919e84e826a7413b5f4b092ada6730/config/corne-ish_zen.keymap#L10
 
-    base_layer {
-      label = "DVORAK";
-      bindings = <
+    ZMK_LAYER(DVORAK,
       // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
       // ├             ┼      '      ┼      ,      ┼      .      ┼      P      ┼      Y      ┤ ├      F      ┼      G      ┼      C      ┼      R      ┼      L      ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
@@ -187,12 +188,9 @@
           &none         &hml LSHFT A  &hml LALT O   &hml LGUI E   &hml LCTRL U  &kp I           &kp D         &hmr LCTRL H  &hmr LGUI T   &hmr LALT N   &hmr LSHFT S  &none
           &none         &kp SEMI      &hml RALT Q   &kp J         &kp K         &kp X           &kp B         &kp M         &kp W         &hmr RALT V   &kp Z         &none
                                                     THUMB1        THUMB2        THUMB3          THUMB4        THUMB5        THUMB6
-      >;
-    };
+    )
 
-    numbers_layer {
-      label = "NUMBER";
-      bindings = <
+    ZMK_LAYER(NUMBER,
       // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
       // ├             ┼      !      ┼      @      ┼      #      ┼      $      ┼      %      ┤ ├      ^      ┼      &      ┼      *      ┼      (      ┼      )      ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
@@ -206,12 +204,9 @@
           &none         &hml LSHFT N1 &hml LALT N2  &hml LGUI N3  &hml LCTRL N4 &kp N5          &kp N6        &hmr LCTRL N7 &hmr LGUI N8  &hmr LALT N9  &hmr LSHFT N0  &none
           &none         &kp COMMA     &kp DOT       &kp LBKT      &kp RBKT      &kp GRAVE       &kp BSLH      &kp FSLH      &kp EQUAL     &kp PLUS      &kp MINUS      &none
                                                     &kp ESC       &kp TAB       &kp SPACE       &trans        &none         &none
-      >;
-    };
+    )
 
-    nav_layer {
-      label = "NAV";
-      bindings = <
+    ZMK_LAYER(NAV,
       // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
       // ├             ┼ WIN PRV MON ┼ SNP WIN LFT ┼ SNP WIN RGT ┼ WIN NXT MON ┼ Win Explorer┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
@@ -225,12 +220,9 @@
           &none         NAV_LM4       NAV_LM3       &kp LGUI      &kp LCTRL     &kp PTOYS_RUN   &kp K_APP     &kp LEFT      &kp UP        &kp DOWN      &kp RIGHT     &none
           &none         &kp LA(F4)    &kp LC(LS(A)) &kp PRV_TAB   &kp NXT_TAB   &kp CA_TAB      &kp SPACE     &kp HOME      &kp PG_UP     &kp PG_DN     &kp END       &none
                                                     &none         &none         &trans          &kp BSPC      &kp DEL       &none
-      >;
-    };
+    )
 
-    misc1_layer {
-      label = "MISC 1";
-      bindings = <
+    ZMK_LAYER(MISC_1,
       // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
       // ├             ┼ Next Fold Up┼  File Hist  ┼ GH Permalink┼  Git Graph  ┼             ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
@@ -244,12 +236,9 @@
           &none         &kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &kp OPSWD_BRW   &none         &kp OPSWD_WIN &none         &none         &none         &none
           &none         &kp TERM      &kp NEW_TERM  &kp PRV_TERM  &kp NXT_TERM  &kp F22         &none         &kp F23       &kp F24       &none         &none         &none
                                                     &none         &trans        &none           &none         &none         &none
-      >;
-    };
+    )
 
-    misc2_layer {
-      label = "MISC 2";
-      bindings = <
+    ZMK_LAYER(MISC_2,
       // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
       // ├             ┼             ┼             ┼             ┼             ┼             ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
@@ -263,12 +252,9 @@
           &none         &none         &none         &none         &none         &none           &kp C_PP      &kp C_PREV    &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT    &none
           &none         &none         &none         &none         &none         &none           &kp C_MUTE    &none         &none         &none         &none         &none
                                                     &none         &none         &none           &none         &trans        &none
-      >;
-    };
+    )
 
-    function_layer {
-      label = "FUNC";
-      bindings = <
+    ZMK_LAYER(FUNC,
       // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
       // ├             ┼     F1      ┼     F2      ┼     F3      ┼     F4      ┼  Pause/Brk  ┤ ├   INSERT    ┼     F13     ┼     F14     ┼     F15     ┼     F16     ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
@@ -282,12 +268,9 @@
           &none         &hml LSHFT F5 &hml LALT F6  &hml LGUI F7  &hml LCTRL F8 &kp PSCRN       &kp SLCK      &hmr LCTRL F17 &hmr LGUI F18 &hmr LALT F19 &hmr LSHFT F20 &none
           &none         &kp F9        &kp F10       &kp F11       &kp F12       &kp CAPS        &none         &kp F21        &kp F22       &kp F23       &kp F24       &none
                                                     &trans        &sl LY_SYS    &kp CA_LSFT     &none         &none          &none
-      >;
-    };
+    )
 
-    system_layer {
-      label = "SYSTEM";
-      bindings = <
+    ZMK_LAYER(SYSTEM,
       // NOTE: &sys_reset and &bootloader need to be directly bound to a key for locality (correct half affected) to work, see https://github.com/zmkfirmware/zmk/issues/1494
       // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
       // ├             ┼    Reset    ┼ Bootloader  ┼             ┼             ┼ Out Toggle  ┤ ├             ┼             ┼             ┼ Bootloader  ┼    Reset    ┼             ┤
@@ -302,12 +285,9 @@
           &none         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none         &none         &none         &none         &none         &none
           &none         &bt BT_CLR    &none         &none         &none         &none           &none         &none         &none         &none         &none         &none
                                                     &none         &none         &to LY_GAM      &none         &none         &none
-      >;
-    };
+    )
 
-    gaming_layer {
-      label = "GAMING";
-      bindings = <
+    ZMK_LAYER(GAMING,
       // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
       // ├     ESC     ┼      Q      ┼      W      ┼      E      ┼      R      ┼      T      ┤ ├      Y      ┼      U      ┼     Up      ┼      O      ┼      P      ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
@@ -321,12 +301,9 @@
           &kp LSHFT     &kp A         &kp S         &kp D         &kp F         &kp G           &kp H         &kp LEFT      &kp DOWN      &kp RIGHT     &kp SEMI      &none
           &kp LCTRL     &kp Z         &kp X         &kp C         &kp V         &kp B           &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH      &none
                                                     &mo LY_GNUM   &kp TAB       &kp SPACE       &kp BSPC      &none         &to LY_BASE
-      >;
-    };
+    )
 
-    gaming_numbers_layer {
-      label = "GAMNUM";
-      bindings = <
+    ZMK_LAYER(GAMNUM,
       // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
       // ├             ┼             ┼             ┼             ┼             ┼             ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
@@ -340,12 +317,9 @@
           &none         &kp N1         &kp N2         &kp N3       &kp N4        &kp N5          &none         &none         &none         &none          &none          &none
           &none         &kp N6         &kp N7         &kp N8       &kp N9        &kp N0          &none         &none         &none         &none          &none          &none
                                                       &trans       &none         &none           &none         &none         &none
-      >;
-    };
+    )
 
-    // template_layer {
-    //   label = "TEMPLATE";
-    //   bindings = <
+    // ZMK_LAYER(TEMPLATE,
     //   // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
     //   // ├             ┼             ┼             ┼             ┼             ┼             ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
     //   // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
@@ -359,7 +333,6 @@
     //       &none         &none         &none         &none         &none         &none           &none         &none         &none         &none         &none         &none
     //       &none         &none         &none         &none         &none         &none           &none         &none         &none         &none         &none         &none
     //                                                 &none         &none         &none           &none         &none         &none
-    //   >;
-    // };
+    // )
   };
 };
