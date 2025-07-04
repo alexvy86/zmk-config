@@ -43,6 +43,11 @@ For example:
   F5, F8, F10, F11, and F12, are particularly important here.
   F3 is also useful when searching.
 
+### Leverage right half for things that assume I'm typing or have both hands on the keyboard
+
+For example, shortcuts that then require me to type something, like opening PowerToys Run or
+a tab-search in the browser.
+
 ### One-shot access to "system layer"
 
 Most system functions are not a frequent part of my day to day usage of the keyboard,
