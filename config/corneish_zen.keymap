@@ -133,8 +133,10 @@ ZMK_TAP_DANCE(td_layers,
 #define THUMB5 &lt LY_MIS2 BSPC
 #define THUMB6 &kp ENTER
 
-#define NAV_LM4 &mt LSHFT PRV_VD
-#define NAV_LM3 &mt LALT NXT_VD
+#define NAV_LM4 &hml LSHFT LC(Z)
+#define NAV_LM3 &hml LALT LC(X)
+#define NAV_LM2 &hml LGUI LC(C)
+#define NAV_LM1 &hml LCTRL LC(V)
 
 /* Combos */
 ZMK_COMBO(caps_word, &caps_word, LH0 RH0, ALL, 50) // Caps word on main thumb keys
@@ -177,30 +179,30 @@ ZMK_LAYER(NAV,
   // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
   // ├             ┼ WIN PRV MON ┼ SNP WIN LFT ┼ SNP WIN RGT ┼ WIN NXT MON ┼  1Pswd Brw  ┤ ├  1Pswd Win  ┼ PwrToys Run ┼  Tab search ┼             ┼             ┼             ┤
   // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-  // ├             ┼ LSHFT/PRV_VD┼ LALT/NXT_VD ┼     LGUI    ┼    LCTRL    ┼ CTRL ALT TAB┤ ├ CONTEXT MENU┼    LEFT     ┼     UP      ┼     DOWN    ┼    RIGHT    ┼             ┤
+  // ├             ┼ LSHFT/Undo  ┼  LALT/Cut   ┼  LGUI/Copy  ┼ LCTRL/Paste ┼ CTRL ALT TAB┤ ├ CONTEXT MENU┼    LEFT     ┼     UP      ┼     DOWN    ┼    RIGHT    ┼             ┤
   // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
   // ├             ┼  Alt + F4   ┼     DEL     ┼  PREV TAB   ┼  NEXT TAB   ┼ Win Explorer┤ ├     SPC     ┼    HOME     ┼   PAGE UP   ┼  PAGE DOWN  ┼     END     ┼             ┤
   // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
   //                                           ├             ┼             ┼ // HELD //  ┤ ├     BKSP    ┼     DEL     ┼             ┤
   //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
       &none         &kp GS_LFT    &kp G_LFT     &kp G_RGT     &kp GS_RGT    &kp OPSWD_BRW   &kp OPSWD_WIN &kp PTOYS_RUN &kp LC(LS(A)) &none         &none         &none
-      &none         NAV_LM4       NAV_LM3       &kp LGUI      &kp LCTRL     &kp CA_TAB      &kp K_APP     &kp LEFT      &kp UP        &kp DOWN      &kp RIGHT     &none
+      &none         NAV_LM4       NAV_LM3       NAV_LM2       NAV_LM1       &kp CA_TAB      &kp K_APP     &kp LEFT      &kp UP        &kp DOWN      &kp RIGHT     &none
       &none         &kp LA(F4)    &kp DEL       &kp PRV_TAB   &kp NXT_TAB   &kp LG(E)       &kp SPACE     &kp HOME      &kp PG_UP     &kp PG_DN     &kp END       &none
                                                 &none         &none         &trans          &kp BSPC      &kp DEL       &none
 )
 
 ZMK_LAYER(MISC_1,
   // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-  // ├             ┼ Next Fold Up┼  File Hist  ┼ GH Permalink┼  Git Graph  ┼             ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
+  // ├             ┼   PRV_VD    ┼   NXT_VD    ┼             ┼             ┼             ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
   // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-  // ├             ┼    Undo     ┼     Cut     ┼    Copy     ┼    Paste    ┼             ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
+  // ├             ┼ Next Fold Up┼  File Hist  ┼ GH Permalink┼  Git Graph  ┼             ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
   // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
   // ├             ┼  Terminal   ┼  New Term   ┼  Prev Term  ┼  Next Term  ┼ ToggleFocus ┤ ├             ┼ Trm Height+ ┼ Trm Height- ┼             ┼             ┼             ┤
   // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
   //                                           ├             ┼ // HELD //  ┼             ┤ ├             ┼             ┼             ┤
   //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
+      &none         PRV_VD        NXT_VD        &none         &none         &none           &none         &none         &none         &none         &none         &none
       &none         &kp FOLD_UP   &kp FILE_HIST &kp GH_PERMA  &kp GIT_GRAPH &none           &none         &none         &none         &none         &none         &none
-      &none         &kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &none           &none         &none         &none         &none         &none         &none
       &none         &kp TERM      &kp NEW_TERM  &kp PRV_TERM  &kp NXT_TERM  &kp F22         &none         &kp F23       &kp F24       &none         &none         &none
                                                 &none         &trans        &none           &none         &none         &none
 )
