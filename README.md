@@ -3,7 +3,9 @@
 Builds firmware for two keyboards from a single repo:
 
 - **CorneIsh-Zen v2** — integrated board with e-ink display
+  - Original base config: https://github.com/LOWPROKB/zmk-config-Corne-ish-Zen
 - **CorneMini2** — nice!nano v2 + Corne shield + nice!view
+  - Original base config: https://github.com/KeyboardHoarders/zmk-config-cornemini2
 
 Both share `config/keymap.dtsi`. Each keyboard has its own thin `.keymap` wrapper (for any board-specific device tree config) and its own `.conf` for hardware settings.
 
