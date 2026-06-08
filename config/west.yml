@@ -7,9 +7,9 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    # Used for zmk-helpers (ZMK_LAYER, ZMK_HOLD_TAP, ZMK_TAP_DANCE, ZMK_COMBO macros, key labels)
     - name: urob
       url-base: https://github.com/urob
-      # Used for zmk-helpers (ZMK_LAYER, ZMK_HOLD_TAP, ZMK_TAP_DANCE macros, key labels)
     - name: sethmilliken
       url-base: https://github.com/SethMilliken
     # Additional modules containing boards/shields/custom code can be listed here as well
