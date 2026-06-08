@@ -1,21 +1,16 @@
-# NOTES: using urob's fork for:
-# - Andrzej's change for hold-on-release to work with tap-preferred hold-taps.
-# - Cem Aksoylar's display and battery tweaks.
 manifest:
+  defaults:
+    revision: v0.3
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
     - name: urob
       url-base: https://github.com/urob
-    - name: caksoylar
-      url-base: https://github.com/caksoylar
     # Additional modules containing boards/shields/custom code can be listed here as well
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
   projects:
-    # Using caksoylar's fork for display and battery tweaks
     - name: zmk
-      remote: caksoylar
-      revision: caksoylar/zen-v1+v2  # custom branch name
+      remote: zmkfirmware
       import: app/west.yml
     - name: zmk-helpers
       remote: urob
