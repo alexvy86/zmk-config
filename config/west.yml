@@ -1,3 +1,6 @@
+# Using SethMilliken's fork for Zen display patches (e-ink full refresh, invert,
+# layer status widget tweaks), as recommended by caksoylar as the maintained home
+# for those changes: https://github.com/SethMilliken/zmk/tree/zen-display-patches
 manifest:
   defaults:
     revision: v0.3
@@ -6,11 +9,14 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: urob
       url-base: https://github.com/urob
+    - name: sethmilliken
+      url-base: https://github.com/SethMilliken
     # Additional modules containing boards/shields/custom code can be listed here as well
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
   projects:
     - name: zmk
-      remote: zmkfirmware
+      remote: sethmilliken
+      revision: zen-display-patches
       import: app/west.yml
     - name: zmk-helpers
       remote: urob
