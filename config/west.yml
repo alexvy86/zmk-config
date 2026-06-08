@@ -1,6 +1,3 @@
-# Using SethMilliken's fork for Zen display patches (e-ink full refresh, invert,
-# layer status widget tweaks), as recommended by caksoylar as the maintained home
-# for those changes: https://github.com/SethMilliken/zmk/tree/zen-display-patches
 manifest:
   defaults:
     revision: v0.3
@@ -10,6 +7,9 @@ manifest:
     # Used for zmk-helpers (ZMK_LAYER, ZMK_HOLD_TAP, ZMK_TAP_DANCE, ZMK_COMBO macros, key labels)
     - name: urob
       url-base: https://github.com/urob
+    # Used for Zen display patches (e-ink full refresh, invert, layer status widget tweaks),
+    # as recommended by caksoylar as the maintained home for those changes:
+    # https://github.com/SethMilliken/zmk/tree/zen-display-patches
     - name: sethmilliken
       url-base: https://github.com/SethMilliken
     # Additional modules containing boards/shields/custom code can be listed here as well
