@@ -1,4 +1,19 @@
-# My Corne-ish Zen layout
+# My ZMK config
+
+Builds firmware for two keyboards from a single repo:
+
+- **CorneIsh-Zen v2** — integrated board with e-ink display
+- **CorneMini2** — nice!nano v2 + Corne shield + nice!view
+
+Both share `config/keymap.dtsi`. Each keyboard has its own thin `.keymap` wrapper (for any board-specific device tree config) and its own `.conf` for hardware settings.
+
+## Adding another Corne-based keyboard with a different keymap
+
+ZMK resolves keymap and conf files by shield name, so two builds using the same `corne_left`/`corne_right` shields will always share `corne.keymap` and `corne.conf`. To give a second Corne-based keyboard its own files, create a minimal custom shield in `boards/shields/` (a `Kconfig.shield`, `Kconfig.defconfig`, and left/right `.overlay` files that wrap the upstream Corne shield). This gives the keyboard a unique shield name (e.g. `my_corne_left`) and therefore its own `my_corne.keymap` and `my_corne.conf`.
+
+---
+
+# Layout philosophy
 
 ## Philosophy
 
