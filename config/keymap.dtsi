@@ -38,8 +38,8 @@
 #define OPSWD_BRW LA(LS(X))
 #define OPSWD_WIN LC(LS(SPACE))
 #define PTOYS_RUN LG(LC(SPACE))
-#define SCRL_U    &msc SCRL_UP
-#define SCRL_D    &msc SCRL_DOWN
+#define SCROLL_UP   &msc SCRL_UP
+#define SCROLL_DOWN &msc SCRL_DOWN
 
 // Layers
 #define LY_BASE 0
@@ -171,8 +171,8 @@ ZMK_LAYER(NAV,
   // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
   //                                           ├             ┼             ┼ // HELD //  ┤ ├     BKSP    ┼     DEL     ┼             ┤
   //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
-      SCRL_U        &kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &kp OPSWD_BRW   &kp OPSWD_WIN &kp PTOYS_RUN &kp LC(LS(A)) &none         &none         &none
-      SCRL_D        &kp LSHFT     &kp LALT      &kp LGUI      &kp LCTRL     &kp CA_TAB      &kp K_APP     &kp LEFT      &kp UP        &kp DOWN      &kp RIGHT     &none
+      SCROLL_UP     &kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &kp OPSWD_BRW   &kp OPSWD_WIN &kp PTOYS_RUN &kp LC(LS(A)) &none         &none         &none
+      SCROLL_DOWN   &kp LSHFT     &kp LALT      &kp LGUI      &kp LCTRL     &kp CA_TAB      &kp K_APP     &kp LEFT      &kp UP        &kp DOWN      &kp RIGHT     &none
       &none         &kp LA(F4)    &kp DEL       &kp PRV_TAB   &kp NXT_TAB   &kp LG(E)       &kp SPACE     &kp HOME      &kp PG_UP     &kp PG_DN     &kp END       &none
                                                 &none         &none         &trans          &kp BSPC      &kp DEL       &none
 )
