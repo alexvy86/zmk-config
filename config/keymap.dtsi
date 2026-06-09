@@ -1,6 +1,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/outputs.h>
 
 // Urob's helpers. Needed for ZMK_LAYER(), ZMK_HOLD_TAP(), ZMK_TAP_DANCE().
@@ -160,16 +161,16 @@ ZMK_LAYER(NUMBER,
 
 ZMK_LAYER(NAV,
   // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-  // ├             ┼    Undo     ┼     Cut     ┼    Copy     ┼    Paste    ┼  1Pswd Brw  ┤ ├  1Pswd Win  ┼ PwrToys Run ┼  Tab search ┼             ┼             ┼             ┤
+  // ├  Scrl Up    ┼    Undo     ┼     Cut     ┼    Copy     ┼    Paste    ┼  1Pswd Brw  ┤ ├  1Pswd Win  ┼ PwrToys Run ┼  Tab search ┼             ┼             ┼             ┤
   // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-  // ├             ┼    LSHFT    ┼     LALT    ┼    LGUI     ┼    LCTRL    ┼ CTRL ALT TAB┤ ├ CONTEXT MENU┼    LEFT     ┼     UP      ┼     DOWN    ┼    RIGHT    ┼             ┤
+  // ├  Scrl Down  ┼    LSHFT    ┼     LALT    ┼    LGUI     ┼    LCTRL    ┼ CTRL ALT TAB┤ ├ CONTEXT MENU┼    LEFT     ┼     UP      ┼     DOWN    ┼    RIGHT    ┼             ┤
   // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
   // ├             ┼  Alt + F4   ┼     DEL     ┼  PREV TAB   ┼  NEXT TAB   ┼ Win Explorer┤ ├     SPC     ┼    HOME     ┼   PAGE UP   ┼  PAGE DOWN  ┼     END     ┼             ┤
   // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
   //                                           ├             ┼             ┼ // HELD //  ┤ ├     BKSP    ┼     DEL     ┼             ┤
   //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
-      &none         &kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &kp OPSWD_BRW   &kp OPSWD_WIN &kp PTOYS_RUN &kp LC(LS(A)) &none         &none         &none
-      &none         &kp LSHFT     &kp LALT      &kp LGUI      &kp LCTRL     &kp CA_TAB      &kp K_APP     &kp LEFT      &kp UP        &kp DOWN      &kp RIGHT     &none
+      &msc SCRL_UP  &kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &kp OPSWD_BRW   &kp OPSWD_WIN &kp PTOYS_RUN &kp LC(LS(A)) &none         &none         &none
+      &msc SCRL_DOWN &kp LSHFT    &kp LALT      &kp LGUI      &kp LCTRL     &kp CA_TAB      &kp K_APP     &kp LEFT      &kp UP        &kp DOWN      &kp RIGHT     &none
       &none         &kp LA(F4)    &kp DEL       &kp PRV_TAB   &kp NXT_TAB   &kp LG(E)       &kp SPACE     &kp HOME      &kp PG_UP     &kp PG_DN     &kp END       &none
                                                 &none         &none         &trans          &kp BSPC      &kp DEL       &none
 )
