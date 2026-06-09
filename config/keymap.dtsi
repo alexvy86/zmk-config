@@ -1,6 +1,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/outputs.h>
 
 // Urob's helpers. Needed for ZMK_LAYER(), ZMK_HOLD_TAP(), ZMK_TAP_DANCE().
@@ -37,6 +38,10 @@
 #define OPSWD_BRW LA(LS(X))
 #define OPSWD_WIN LC(LS(SPACE))
 #define PTOYS_RUN LG(LC(SPACE))
+#define SCROLL_UP    &msc SCRL_UP
+#define SCROLL_DOWN  &msc SCRL_DOWN
+#define SCROLL_LEFT  &msc SCRL_LEFT
+#define SCROLL_RIGHT &msc SCRL_RIGHT
 
 // Layers
 #define LY_BASE 0
@@ -178,14 +183,14 @@ ZMK_LAYER(MISC_1,
   // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
   // ├             ┼ WIN PRV MON ┼ SNP WIN LFT ┼ SNP WIN RGT ┼ WIN NXT MON ┼             ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
   // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-  // ├             ┼ Next Fold Up┼  File Hist  ┼ GH Permalink┼  Git Graph  ┼             ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
+  // ├             ┼ Next Fold Up┼  File Hist  ┼ GH Permalink┼  Git Graph  ┼             ┤ ├             ┼ Scrl Left   ┼   Scrl Up   ┼  Scrl Down  ┼ Scrl Right  ┼             ┤
   // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
   // ├             ┼  Terminal   ┼  New Term   ┼  Prev Term  ┼  Next Term  ┼ ToggleFocus ┤ ├             ┼ Trm Height+ ┼ Trm Height- ┼             ┼             ┼             ┤
   // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
   //                                           ├             ┼ // HELD //  ┼             ┤ ├             ┼             ┼             ┤
   //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
       &none         &kp GS_LFT    &kp G_LFT     &kp G_RGT     &kp GS_RGT    &none           &none         &none         &none         &none         &none         &none
-      &none         &kp FOLD_UP   &kp FILE_HIST &kp GH_PERMA  &kp GIT_GRAPH &none           &none         &none         &none         &none         &none         &none
+      &none         &kp FOLD_UP   &kp FILE_HIST &kp GH_PERMA  &kp GIT_GRAPH &none           &none         SCROLL_LEFT   SCROLL_UP     SCROLL_DOWN   SCROLL_RIGHT  &none
       &none         &kp TERM      &kp NEW_TERM  &kp PRV_TERM  &kp NXT_TERM  &kp F22         &none         &kp F23       &kp F24       &none         &none         &none
                                                 &none         &trans        &none           &none         &none         &none
 )
