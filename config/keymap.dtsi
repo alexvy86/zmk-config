@@ -38,8 +38,10 @@
 #define OPSWD_BRW LA(LS(X))
 #define OPSWD_WIN LC(LS(SPACE))
 #define PTOYS_RUN LG(LC(SPACE))
-#define SCROLL_UP   &msc SCRL_UP
-#define SCROLL_DOWN &msc SCRL_DOWN
+#define SCROLL_UP    &msc SCRL_UP
+#define SCROLL_DOWN  &msc SCRL_DOWN
+#define SCROLL_LEFT  &msc SCRL_LEFT
+#define SCROLL_RIGHT &msc SCRL_RIGHT
 
 // Layers
 #define LY_BASE 0
@@ -163,16 +165,16 @@ ZMK_LAYER(NUMBER,
 
 ZMK_LAYER(NAV,
   // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-  // ├  Scrl Up    ┼    Undo     ┼     Cut     ┼    Copy     ┼    Paste    ┼  1Pswd Brw  ┤ ├  1Pswd Win  ┼ PwrToys Run ┼  Tab search ┼             ┼             ┼             ┤
+  // ├             ┼    Undo     ┼     Cut     ┼    Copy     ┼    Paste    ┼  1Pswd Brw  ┤ ├  1Pswd Win  ┼ PwrToys Run ┼  Tab search ┼             ┼             ┼             ┤
   // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-  // ├  Scrl Down  ┼    LSHFT    ┼     LALT    ┼    LGUI     ┼    LCTRL    ┼ CTRL ALT TAB┤ ├ CONTEXT MENU┼    LEFT     ┼     UP      ┼     DOWN    ┼    RIGHT    ┼             ┤
+  // ├             ┼    LSHFT    ┼     LALT    ┼    LGUI     ┼    LCTRL    ┼ CTRL ALT TAB┤ ├ CONTEXT MENU┼    LEFT     ┼     UP      ┼     DOWN    ┼    RIGHT    ┼             ┤
   // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
   // ├             ┼  Alt + F4   ┼     DEL     ┼  PREV TAB   ┼  NEXT TAB   ┼ Win Explorer┤ ├     SPC     ┼    HOME     ┼   PAGE UP   ┼  PAGE DOWN  ┼     END     ┼             ┤
   // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
   //                                           ├             ┼             ┼ // HELD //  ┤ ├     BKSP    ┼     DEL     ┼             ┤
   //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
-      SCROLL_UP     &kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &kp OPSWD_BRW   &kp OPSWD_WIN &kp PTOYS_RUN &kp LC(LS(A)) &none         &none         &none
-      SCROLL_DOWN   &kp LSHFT     &kp LALT      &kp LGUI      &kp LCTRL     &kp CA_TAB      &kp K_APP     &kp LEFT      &kp UP        &kp DOWN      &kp RIGHT     &none
+      &none         &kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &kp OPSWD_BRW   &kp OPSWD_WIN &kp PTOYS_RUN &kp LC(LS(A)) &none         &none         &none
+      &none         &kp LSHFT     &kp LALT      &kp LGUI      &kp LCTRL     &kp CA_TAB      &kp K_APP     &kp LEFT      &kp UP        &kp DOWN      &kp RIGHT     &none
       &none         &kp LA(F4)    &kp DEL       &kp PRV_TAB   &kp NXT_TAB   &kp LG(E)       &kp SPACE     &kp HOME      &kp PG_UP     &kp PG_DN     &kp END       &none
                                                 &none         &none         &trans          &kp BSPC      &kp DEL       &none
 )
@@ -181,14 +183,14 @@ ZMK_LAYER(MISC_1,
   // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
   // ├             ┼ WIN PRV MON ┼ SNP WIN LFT ┼ SNP WIN RGT ┼ WIN NXT MON ┼             ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
   // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-  // ├             ┼ Next Fold Up┼  File Hist  ┼ GH Permalink┼  Git Graph  ┼             ┤ ├             ┼             ┼             ┼             ┼             ┼             ┤
+  // ├             ┼ Next Fold Up┼  File Hist  ┼ GH Permalink┼  Git Graph  ┼             ┤ ├             ┼ Scrl Left   ┼   Scrl Up   ┼  Scrl Down  ┼ Scrl Right  ┼             ┤
   // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
   // ├             ┼  Terminal   ┼  New Term   ┼  Prev Term  ┼  Next Term  ┼ ToggleFocus ┤ ├             ┼ Trm Height+ ┼ Trm Height- ┼             ┼             ┼             ┤
   // ╰───────────────────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴───────────────────────────╯
   //                                           ├             ┼ // HELD //  ┼             ┤ ├             ┼             ┼             ┤
   //                                           ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
       &none         &kp GS_LFT    &kp G_LFT     &kp G_RGT     &kp GS_RGT    &none           &none         &none         &none         &none         &none         &none
-      &none         &kp FOLD_UP   &kp FILE_HIST &kp GH_PERMA  &kp GIT_GRAPH &none           &none         &none         &none         &none         &none         &none
+      &none         &kp FOLD_UP   &kp FILE_HIST &kp GH_PERMA  &kp GIT_GRAPH &none           &none         SCROLL_LEFT  SCROLL_UP    SCROLL_DOWN  SCROLL_RIGHT &none
       &none         &kp TERM      &kp NEW_TERM  &kp PRV_TERM  &kp NXT_TERM  &kp F22         &none         &kp F23       &kp F24       &none         &none         &none
                                                 &none         &trans        &none           &none         &none         &none
 )
